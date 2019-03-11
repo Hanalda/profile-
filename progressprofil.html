@@ -1,0 +1,162 @@
+<html>
+    <head>
+        <title>
+            Profil Saya
+        </title>
+        <link rel="stylesheet"
+        href="styleprogress.css">
+        <meta name="viewport" content="width=device-width,
+        initial-scale-1.0">
+    </head>
+    <body>
+        <nav>
+            <div class="menu-mobile">
+                <a href="#" onclick="showMenu()">MENU</a>
+            </div>
+            <ul id="menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">PRODUCT</a></li>
+                <li><a href="#">GALLERY</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">MY INVENTORY</a></li>
+            </ul>
+        </nav>
+
+        <section id="box-profile">
+            <div class="img-profile">
+                <div class="photo" style="background-image: 
+                url(IMG_4588.JPG);">
+                </div>
+            </div>
+            <div class="description">
+                <h1 id="pNama">Hanalda Bunga Permata</h1>
+                <p id="pRole">Student at SMK TELKOM MALANG</p>
+                <a href="#input-form" class="button bg-green" onclick="editform()">Edit</a>
+                <a href="#" class="button border-blue">Resume</a>
+            </div>
+                <div class="information">
+                    <div class="data">
+                    <p class="field">Ttl</p>
+                    <p id="pTtl" class="text-gray">Lamongan, 1 April 2003</p>
+                    </div>
+                    <div class="data">
+                    <p class="field">Age</p>
+                    <p id="pAge" class="text-gray">15</p>
+                    </div>
+                    <div class="data">
+                    <p class="field">Location</p>
+                    <p id="pLocation" class="text-gray">Malang, Indonesia</p>
+                    </div>
+                    <div class="data">
+                    <p class="field">Hobi</p>
+                    <p id="pHobi" class="text-gray">Olahraga</p>
+                    </div>
+                    <div class="data">
+                    <p class="field">Email</p>
+                    <p id="pEmail" class="text-gray">@hanalda_bunga_27rpl@student.smktelkom-mlg.sch.id</p>
+                </div>
+                </div>
+        </section>
+
+        <section id="input-form">
+            <form method="#" action="#"><!---->
+                <div class="form">
+                <label>Nama</label>
+                <input id="inpNama" type="text" name="name"
+                placeholder="masukkan nama anda">
+            </div>
+            <div class="form">
+                <label>Role</label>
+                <input id="inpRole" type="text" name="role">
+            </div>
+            <div class="form">
+                <label>Ttl</label>
+                <input id="inpTtl" type="text" name="ttl">
+            </div>
+            <div class="form">
+                <label>Location</label>
+                <input id="inplocation" type="text" name="location">
+            </div>
+            <div class="form">
+                <label> Age</label>
+                <input id="inpAge" type="text" name="Age">
+               </div>
+               <div class="form" > 
+                   <label>Hobi</label>
+                   <input id="inpHobi" type="text" name="" id="Hobi">
+               </div>
+               <div class="form">
+                   <label>Email</label>
+                   <input id="inpEmail" type="text" name="email">
+               </div>
+               <div class="form">
+                   <input onclick="simpanform()" type="submit" name="submit"
+                   value="submit" class="bg-blue">
+               </div>
+            <!-- </form> -->
+        </section>
+        
+        <script>
+            var forMenu = document.getElementById("input-form");
+            forMenu.style.display = "none";
+
+            function editform(){
+                if(forMenu.style.display === "none"){
+                    forMenu.style.display = "block";
+                }else{
+                    forMenu.style.display = "none";
+                }
+                var nama = document.getElementById("pNama").innerHTML;
+                var role = document.getElementById("pRole").innerHTML;
+                var ttl = document.getElementById("pTtl").innerHTML;
+                var location = document.getElementById("pLocation").innerHTML;
+                var hobi = document.getElementById("pHobi").innerHTML;
+                var age = document.getElementById("pAge").innerHTML;
+                var email = document.getElementById("pEmail").innerHTML;
+                
+
+                document.getElementById("inpNama").value = nama;
+                document.getElementById("inpRole").value = role;
+                document.getElementById("inpTTL").value = TTL;
+                document.getElementById("inpLocation").value = location;
+                document.getElementById("inpHobi").value = hobi;
+                document.getElementById("inpAge").value = age;
+                document.getElementById("inpEmail").value = email;
+
+            }
+
+
+            function simpanform(){
+                forMenu.style.display="none";
+                var nama = document.getElementById("inpNama").value;
+                var role = document.getElementById("inpRole").value;
+                var ttl = document.getElementById("inpTtl").value;
+                var age = document.getElementById("inpAge").value;
+                var location = document.getElementById("inpLocation").value;
+                var hobi = document.getElementById("inpHobi").value;
+                var email = document.getElementById("inpEmail").value;
+
+                document.getElementById("pNama").innerHTML = nama;
+                document.getElementById("pRole").innerHTML = role;
+                document.getElementById("pTtl").innerHTML = ttl;
+                document.getElementById("pAge").innerHTML = age;
+                document.getElementById("pLocation").innerHTML = location;
+                document.getElementById("pHobi").innerHTML = hobi;
+                document.getElementById("pEmail").innerHTML = email;
+            }
+            function showMenu(){
+                var menu = document.getElementById("menu");
+                var box = document.getElementById("box-profile");
+
+                if(menu.style.display === "block"){
+                    menu.style.display = "none";
+                    box.style.paddingTop = "0px";
+                }
+                else{
+                    menu.style.display = "block";
+                    box.style.paddingTop = "125px";
+                }
+            }
+        </script>
+    </body>
+</html>
